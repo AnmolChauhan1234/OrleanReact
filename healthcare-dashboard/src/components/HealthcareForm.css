@@ -1,0 +1,148 @@
+/* Ensure html and body take up full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Set up full-screen flexbox layout for centering */
+.dashboard {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full viewport height */
+  width: 100vw;             /* Full viewport width */
+  position: relative;
+  background-image: url('https://res.cloudinary.com/did5gvbtr/image/upload/v1732037728/doctor-6701410_1280_y37rno.jpg'); /* Your image URL */
+  background-size: cover;  /* Cover the full viewport */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+/* Overlay to darken the background image for better contrast */
+.dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darken overlay for contrast */
+  z-index: -1; /* Keep the overlay behind the content */
+}
+
+/* Form container to center content */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;          /* Keep the form above the image */
+  position: absolute;  /* Allow this to take full space of the viewport */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Lighter form card style */
+.form-card {
+  background: rgba(255, 255, 255, 0.85); /* Light transparent background for better visibility */
+  border-radius: 15px;
+  padding: 40px 35px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Light shadow for floating effect */
+  width: 100%;
+  max-width: 600px;     /* Max width for larger screens */
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.form-card:hover {
+  transform: translateY(-10px); /* Card lifts on hover */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Increase shadow for hover effect */
+}
+
+/* Form control styles */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Blue border when focused */
+  outline: none;
+}
+
+/* Button styles */
+.btn {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Button lift on hover */
+}
+
+.btn:active {
+  transform: translateY(0); /* Prevents double lift on click */
+}
+
+/* Text alignment for form labels */
+.form-label {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Heading styling */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase; /* Make heading uppercase */
+  letter-spacing: 1.2px; /* Slight letter spacing */
+}
+
+/* Style the dropdown for better visibility */
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.select-wrapper select {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+.select-wrapper select:focus {
+  border-color: #007bff; /* Blue border when focused */
+  outline: none;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .form-card {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
