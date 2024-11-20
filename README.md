@@ -42,7 +42,7 @@ This is a **frontend-only** dashboard built using **ReactJS**. It allows users t
 
 ## License
 This project is licensed under the MIT License.
-    ```markdown
+    ```bash
     ### Notes on Changes:
     - The instructions and commands are updated to match ReactJS development practices.
     - Dependencies installation (`npm install`) and server startup (`npm start`) are included.
