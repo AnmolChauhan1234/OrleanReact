@@ -16,8 +16,8 @@ This is a **frontend-only** dashboard built using **ReactJS**. It allows users t
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/AnmolChauhan1234/OrleanReactJS.git
-   cd OrleanReactJS
+   git clone https://github.com/AnmolChauhan1234/OrleanReact.git
+   cd OrleanReact
 
 2. Install dependencies:
     ```bash
