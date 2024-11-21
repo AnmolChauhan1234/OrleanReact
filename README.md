@@ -46,9 +46,8 @@ This project is licensed under the MIT License.
     ### Notes on Changes:
     - The instructions and commands are updated to match ReactJS development practices.
     - Dependencies installation (`npm install`) and server startup (`npm start`) are included.
-    - URL is updated for React’s default localhost port (`http://localhost:3000/`). 
+    - URL is updated for React’s default localhost port (`http://localhost:3000/`).
 
-    This format is simple and ensures clarity for ReactJS-based projects.
 
 
 
