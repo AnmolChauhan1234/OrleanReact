@@ -1,0 +1,118 @@
+
+.navbar {
+    height: 60px;
+    background-color: #0f1111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.nav-logo, .nav-links, .nav-notifications, .nav-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.nav-logo p, 
+.nav-links p, 
+.nav-notifications p, 
+.nav-profile p {
+    margin: 0;
+}
+
+/* General Hover Style for All Navbar Components */
+.nav-logo:hover, .nav-links:hover, .nav-notifications:hover, .nav-profile:hover {
+    color: #ff9900; /* Bright orange hover color */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Search Bar */
+.nav-search {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    height: 35px;
+    padding: 0 10px;
+}
+
+.search-logo {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    font-size: 1rem;
+    padding: 0 10px;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-icon {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff9900;
+    border-radius: 0 4px 4px 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Profile Section */
+.nav-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 150px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #333;
+}
+
+/* Show Dropdown on Hover */
+.nav-profile:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0s;
+}

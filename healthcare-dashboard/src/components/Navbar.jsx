@@ -1,99 +1,79 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "./Navbar.css"; // Import your external CSS file for styling
 
-const NavbarDark = () => {
-  return (
-    <nav className="navbar navbar-dark bg-dark fixed-top h-max">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Healthcare
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasDarkNavbar"
-          aria-controls="offcanvasDarkNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className="offcanvas offcanvas-end text-bg-dark"
-          tabIndex="-1"
-          id="offcanvasDarkNavbar"
-          aria-labelledby="offcanvasDarkNavbarLabel"
-        >
-          <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              Profile
-            </h5>
-            <button
-              type="button"
-              className="btn-close btn-close-white"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu dropdown-menu-dark">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <form className="d-flex flex-column mt-3" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-primary w-25 mx-auto" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
+const Navbar = () => {
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    // Toggle dropdown visibility when clicking on the profile
+    const toggleDropdown = (e) => {
+        e.stopPropagation(); // Prevent event from propagating
+        setDropdownVisible(prevState => !prevState);
+    };
+
+    // Close dropdown if click is outside of the profile
+    const closeDropdown = (e) => {
+        if (e.target.closest('.nav-profile') === null) {
+            setDropdownVisible(false);
+        }
+    };
+
+    // Close dropdown when clicked outside of the navbar profile section
+    useEffect(() => {
+        document.addEventListener('click', closeDropdown);
+        return () => {
+            document.removeEventListener('click', closeDropdown);
+        };
+    }, []);
+
+    return (
+        <header>
+            <div className="navbar">
+                {/* Logo */}
+                <div className="nav-logo">
+                    <p>HealthCare</p>
+                </div>
+
+                {/* Search Bar */}
+                <div className="nav-search">
+                    <i className="fa-solid fa-stethoscope search-logo"></i>
+                    <input className="search-input" type="text" placeholder="Search..." />
+                    <div className="search-icon">
+                        <i className="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                {/* Dashboard Navigation */}
+                <div className="nav-links">
+                    <p>Dashboard</p>
+                </div>
+                <div className="nav-links">
+                    <p>About</p>
+                </div>
+                <div className="nav-links">
+                    <p>Reports</p>
+                </div>
+
+                {/* Notifications */}
+                <div className="nav-notifications">
+                    <i className="fa-solid fa-bell"></i>
+                    <p>Notifications</p>
+                </div>
+
+                {/* Profile with Dropdown */}
+                <div className="nav-profile" onClick={toggleDropdown}>
+                    <i className="fa-regular fa-user profile-icon"></i>
+                    {/* Dropdown visibility is controlled by state */}
+                    {dropdownVisible && (
+                        <div className="dropdown">
+                            <p className="dropdown-item">Appointments</p>
+                            <p className="dropdown-item">Settings</p>
+                            <p className="dropdown-item">Logout</p>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </header>
+    );
 };
 
-export default NavbarDark;
+export default Navbar;
