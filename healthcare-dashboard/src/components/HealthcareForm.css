@@ -13,24 +13,24 @@ html, body {
   align-items: center;      /* Center vertically */
   height: 100vh;            /* Full viewport height */
   width: 100vw;             /* Full viewport width */
-  position: relative;
-  background-image: url('https://res.cloudinary.com/did5gvbtr/image/upload/v1732037728/doctor-6701410_1280_y37rno.jpg'); /* Your image URL */
+  /* position: relative; */
+  background-image: url('https://res.cloudinary.com/did5gvbtr/image/upload/v1732037728/doctor-6701410_1280_y37rno.jpg');
   background-size: cover;  /* Cover the full viewport */
   background-position: center center; /* Center the image */
   background-repeat: no-repeat; /* Prevent repeating the image */
 }
 
 /* Overlay to darken the background image for better contrast */
-.dashboard::before {
-  content: '';
+/* .dashboard::before { */
+  /* content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Darken overlay for contrast */
-  z-index: -1; /* Keep the overlay behind the content */
-}
+  background-color: rgba(0, 0, 0, 0.5); Darken overlay for contrast */
+  /* z-index: -1; Keep the overlay behind the content */
+/* } */
 
 /* Form container to center content */
 .form-container {

@@ -46,7 +46,7 @@ const HealthcareForm = () => {
               </div>
 
               <div className="mb-3">
-                <FormControl fullWidth>
+                {/* <FormControl fullWidth>
                   <InputLabel id="age-label">Age</InputLabel>
                   <Select
                     labelId="age-label"
@@ -63,11 +63,29 @@ const HealthcareForm = () => {
                       </MenuItem>
                     ))}
                   </Select>
-                </FormControl>
+                </FormControl> */}
+
+                <TextField
+                  label="Age"
+                  id="age"
+                  name="age"
+                  variant="outlined"
+                  select
+                  fullWidth
+                  value={formData.age}
+                  onChange={handleChange}
+                  required
+                >
+                  {Array.from({ length: 100 }, (_, index) => (
+                    <MenuItem key={index + 1} value={index + 1}>
+                      {index + 1}
+                    </MenuItem>
+                  ))}
+                </TextField>
               </div>
 
               <div className="mb-3">
-                <label htmlFor="file" className="form-label">Upload File</label>
+                {/* <label htmlFor="file" className="form-label">Upload File</label> */}
                 <input
                   type="file"
                   id="file"

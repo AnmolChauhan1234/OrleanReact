@@ -2,7 +2,7 @@ import React from "react";
 
 const NavbarDark = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-dark bg-dark fixed-top h-max">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Healthcare
@@ -78,14 +78,14 @@ const NavbarDark = () => {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex mt-3" role="search">
+            <form className="d-flex flex-column mt-3" role="search">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-success" type="submit">
+              <button className="btn btn-primary w-25 mx-auto" type="submit">
                 Search
               </button>
             </form>
