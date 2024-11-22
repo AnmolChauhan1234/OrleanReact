@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, FormControl, InputLabel, Select, MenuItem, TextField } from '@mui/material';
-import './HealthcareForm.css'; // Make sure this is imported
+import './HealthcareForm.css';
 
 const HealthcareForm = () => {
   const [formData, setFormData] = useState({
